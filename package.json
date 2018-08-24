@@ -11,7 +11,7 @@
   "scripts": {
     "lint": "eslint --fix \"**/*.js\"",
     "test": "npm run lint",
-    "start": "firebase serve --only functions",
+    "start": "node index.js",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
