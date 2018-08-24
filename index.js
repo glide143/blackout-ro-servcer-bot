@@ -1,9 +1,9 @@
 'use strict';
 
 
-import express from 'express';
-import { json } from 'body-parser';
-import { dialogflow } from 'actions-on-google';
+const express = require('express');
+const bodyParser = require('body-parser');
+const { dialogflow } = require('actions-on-google');
    
   // Create an app instance
    
@@ -11,11 +11,11 @@ import { dialogflow } from 'actions-on-google';
    
   // Register handlers for Dialogflow intents
    
-  app.intent('Default Welcome Intent', conv => {
-    conv.ask('How are you?');
-  });
+app.intent('Default Welcome Intent', conv => {
+  conv.ask('How are you?');
+});
 
-  const expressApp = express().use(json());
+  const expressApp = express().use(bodyParser.json());
   expressApp.post('/fulfillment', app);
 
-  expressApp.listen(3000);
+  expressApp.listen(8080);
