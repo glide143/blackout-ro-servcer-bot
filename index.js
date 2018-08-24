@@ -18,4 +18,4 @@ app.intent('Default Welcome Intent', conv => {
   const expressApp = express().use(bodyParser.json());
   expressApp.post('/fulfillment', app);
 
-  expressApp.listen(8080);
+  expressApp.listen(process.env.PORT || 8000);
