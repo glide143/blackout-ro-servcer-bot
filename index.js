@@ -29,4 +29,7 @@ const { dialogflow } = require('actions-on-google');
     conv.ask(`I didn't understand. Can you tell me something else?`)
   });
 
-  express().use(bodyParser.json(), app).listen(3000);
+  const expressApp = express().use(bodyParser.json());
+  expressApp.post('/fulfillment', app);
+
+  expressApp.listen(3000);
