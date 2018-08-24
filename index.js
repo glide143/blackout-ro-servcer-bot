@@ -2,11 +2,8 @@
 
 
 const express = require('express');
-
-const {
-    dialogflow,
-    Image,
-  } = require('actions-on-google');
+const bodyParser = require('body-parser');
+const { dialogflow } = require('actions-on-google');
    
   // Create an app instance
    
