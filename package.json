@@ -5,9 +5,6 @@
   "private": true,
   "license": "Apache Version 2.0",
   "author": "Google Inc.",
-  "engines": {
-    "node": "~4.2"
-  },
   "scripts": {
     "lint": "semistandard --fix \"**/*.js\"",
     "start": "node app.js",
