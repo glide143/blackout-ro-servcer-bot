@@ -5,18 +5,25 @@
   "private": true,
   "license": "Apache Version 2.0",
   "author": "Google Inc.",
+  "engines": {
+    "node": "8"
+  },
   "scripts": {
-    "lint": "semistandard --fix \"**/*.js\"",
-    "start": "node app.js",
-    "monitor": "nodemon app.js",
-    "deploy": "gcloud app deploy"
+    "lint": "eslint --fix \"**/*.js\"",
+    "test": "npm run lint",
+    "start": "firebase serve --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.13.4",
-    "actions-on-google": "^1.0.0"
+    "actions-on-google": "^2.0.0",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^1.0.1",
+    "request": "^2.88.0",
+    "sprintf-js": "^1.1.1"
   },
   "devDependencies": {
-    "semistandard": "^9.1.0"
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1"
   }
 }
